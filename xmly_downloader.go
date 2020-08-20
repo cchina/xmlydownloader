@@ -108,7 +108,7 @@ func GetAudioInfo(albumID, page, pageSize int) (audioList []AudioInfo, err error
 	for i2 := 0; i2 < list.Size(); i2++ {
 		v := list.Get(i2).Get("trackInfo")
 		audioList = append(audioList, AudioInfo{TrackID: v.Get("id").ToInt(),
-							PlayPathAacv164: v.Get("playPath").ToString(), Title: v.Get("title").ToString(), Index: v.Get("index").ToInt()})
+							PlayPathAacv164: v.Get("playPath").ToString(), Title: v.Get("title").ToString()})
 	}
 
 	return audioList, nil
