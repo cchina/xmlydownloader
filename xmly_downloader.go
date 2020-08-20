@@ -83,7 +83,7 @@ func GetVipAudioInfo(trackId int, cookie string) (ai *AudioInfo, err error) {
 	args := fmt.Sprintf("?sign=%s&buy_key=%s&token=%d&timestamp=%d&duration=%d",
 		sign, vipAi.BuyKey, token, timestamp, vipAi.Duration)
 
-	ai = &AudioInfo{TrackID: trackId, Title: vipAi.Title}
+	ai = &AudioInfo{TrackID: trackId, Title: vipAi.Title, Index: vipAi.Index}
 
 	ai.PlayPathAacv164 = vipAi.Domain + "/download/" + vipAi.APIVersion + fileName + args
 	return ai, nil
